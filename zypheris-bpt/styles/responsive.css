@@ -1,0 +1,113 @@
+@media (max-width: 575.98px) {
+  .container {
+    padding: var(--spacing-2);
+  }
+  
+  .login-card {
+    margin: var(--spacing-4) auto;
+  }
+  
+  .login-header {
+    padding: var(--spacing-3);
+  }
+  
+  .login-body {
+    padding: var(--spacing-3);
+  }
+  
+  .summary-stats {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+  
+  .stat-item {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+  }
+  
+  .stat-label {
+    margin-top: 0;
+  }
+  
+  .servers-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+  }
+  
+  .search-container {
+    width: 100%;
+  }
+  
+  .server-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+  
+  .actions {
+    width: 100%;
+  }
+  
+  .actions .btn {
+    width: 100%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .server-list {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  
+  .search-container {
+    width: 200px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    padding: var(--spacing-4);
+  }
+  
+  .login-card {
+    margin: var(--spacing-6) auto;
+  }
+  
+  .stat-item {
+    flex: 1;
+  }
+  .server-card {
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal), background-color var(--transition-normal);
+  }
+  
+  .server-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--bg-secondary);
+  }
+  
+  .btn {
+    transition: background-color var(--transition-normal), transform var(--transition-fast), box-shadow var(--transition-normal);
+  }
+  
+  .btn:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn:active {
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    padding: var(--spacing-5);
+  }
+  
+  .server-list {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}

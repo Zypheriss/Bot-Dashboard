@@ -1,0 +1,431 @@
+:root {
+  --discord-blurple: #5865F2;
+  --discord-blurple-hover: #4752c4;
+  --discord-green: #57F287;
+  --discord-yellow: #FEE75C;
+  --discord-red: #ED4245;
+  
+  --bg-primary: #36393f;
+  --bg-secondary: #2f3136;
+  --bg-tertiary: #202225;
+  
+  --text-normal: #dcddde;
+  --text-muted: #a3a6aa;
+  --text-link: #00aff4;
+  
+  --interactive-normal: #b9bbbe;
+  --interactive-hover: #dcddde;
+  --interactive-active: #ffffff;
+  
+  --header-primary: #ffffff;
+  --header-secondary: #b9bbbe;
+  
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 16px;
+  --spacing-4: 24px;
+  --spacing-5: 32px;
+  --spacing-6: 48px;
+  
+  --transition-fast: 0.1s;
+  --transition-normal: 0.2s;
+  --transition-slow: 0.3s;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-tertiary);
+  color: var(--text-normal);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.app-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-3);
+}
+h1, h2, h3, h4, h5, h6 {
+  color: var(--header-primary);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: var(--spacing-3);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color var(--transition-normal), transform var(--transition-fast);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background-color: var(--discord-blurple);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--discord-blurple-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-normal);
+  border: 1px solid var(--interactive-normal);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--interactive-hover);
+}
+.form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--spacing-1);
+  color: var(--text-normal);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"] {
+  width: 100%;
+  padding: var(--spacing-2);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  color: var(--text-normal);
+  font-size: 14px;
+  transition: border-color var(--transition-normal);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus {
+  outline: none;
+  border-color: var(--discord-blurple);
+}
+
+.toggle-password {
+  position: absolute;
+  right: var(--spacing-2);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--interactive-normal);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-password:hover {
+  color: var(--interactive-hover);
+}
+
+.error-message {
+  color: var(--discord-red);
+  font-size: 12px;
+  margin-top: var(--spacing-1);
+  min-height: 16px;
+}
+.section {
+  display: none;
+  min-height: 100vh;
+}
+
+.section.active {
+  display: block;
+}
+.login-card {
+  max-width: 420px;
+  margin: var(--spacing-6) auto;
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.login-header {
+  padding: var(--spacing-4);
+  text-align: center;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--spacing-3);
+  background-color: var(--discord-blurple);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-body {
+  padding: var(--spacing-4);
+}
+
+.login-body p {
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.login-body .btn {
+  width: 100%;
+  margin-top: var(--spacing-3);
+}
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-3) 0;
+  margin-bottom: var(--spacing-4);
+  border-bottom: 1px solid var(--bg-secondary);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container .logo {
+  width: 40px;
+  height: 40px;
+  margin-right: var(--spacing-2);
+  margin-bottom: 0;
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.summary-card {
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.summary-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-3);
+  color: var(--header-secondary);
+  font-size: 16px;
+}
+
+.summary-stats {
+  display: flex;
+  gap: var(--spacing-5);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--header-primary);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: var(--spacing-1);
+}
+
+.servers-container {
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.servers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.search-container {
+  position: relative;
+  width: 240px;
+}
+
+.search-container input {
+  padding-left: 32px;
+}
+
+.search-icon {
+  position: absolute;
+  left: var(--spacing-2);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--interactive-normal);
+}
+
+.server-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-3);
+  position: relative;
+  min-height: 200px;
+}
+
+.server-card {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: pointer;
+}
+
+.server-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.server-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--header-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.server-name {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: var(--spacing-1);
+}
+
+.server-details {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  margin-top: var(--spacing-2);
+}
+
+.server-detail {
+  display: flex;
+  align-items: center;
+}
+
+.server-detail svg {
+  margin-right: var(--spacing-1);
+  color: var(--interactive-normal);
+}
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.loading-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--discord-blurple);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: var(--spacing-3);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
